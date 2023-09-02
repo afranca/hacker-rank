@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -53,5 +54,13 @@ class SockMerchantTest {
         List<Integer> colorList = List.of(1,2,3,3,2,1);
         var result = sut.solve(colorList.size(), colorList);
         assertEquals(result, 3);
+    }
+
+    @Test
+    void shouldReturnZero_emptyList(){
+        var sut = new SockMerchant();
+        List<Integer> colorList = new ArrayList<>();
+        var result = sut.solve(colorList.size(), colorList);
+        assertEquals(result, 0);
     }
 }

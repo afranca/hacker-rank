@@ -3,18 +3,17 @@ import java.util.List;
 
 public class SockMerchant {
 
-    public int solve(int n, List<Integer> colorList){
+    public int solve(int numberOfSocks, List<Integer> colorList){
         int sockMatchCount = 0;
         int index = 0;
         List<Integer> indicesAlreadyMatched = new ArrayList<>();
 
-        while(index < colorList.size()){
+        while(index < numberOfSocks-1){
             if (!indicesAlreadyMatched.contains(index)) {
                 var leftPair = colorList.get(index);
                 boolean match = false;
-                int index2 = index;
-                while (!match && index2 < colorList.size()-1) {
-                    index2++;
+                int index2 = index+1;
+                do {
                     if (!indicesAlreadyMatched.contains(index2)) {
                         var rightPair = colorList.get(index2);
                         if (leftPair.equals(rightPair)) {
@@ -24,13 +23,12 @@ public class SockMerchant {
                             match = true;
                         }
                     }
-                }
+                    index2++;
+                } while (!match && index2 < numberOfSocks);
             }
             index++;
         }
         return sockMatchCount;
     }
-
-
 
 }
