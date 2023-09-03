@@ -1,4 +1,7 @@
+package sockmerchant;
+
 import org.junit.jupiter.api.Test;
+import sockmerchant.SockMerchant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,9 +14,9 @@ class SockMerchantTest {
     @Test
     void dafaultInput(){
         var sut = new SockMerchant();
-        List<Integer> colorList = List.of(1,2,1,2,1,3,2);
+        List<Integer> colorList = List.of(10, 20, 20, 10, 10, 30, 50, 10, 20);
         var result = sut.solve(colorList.size(), colorList);
-        assertEquals(result, 2);
+        assertEquals(result, 3);
     }
 
     @Test
