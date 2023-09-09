@@ -12,7 +12,7 @@ public class Pairs {
             current = arr.get(i);
             for(int j=i+1; j < arr.size(); j++){
                 next = arr.get(j);
-                if( (current-next == k) || (next-current==k)){
+                if(Math.abs(current-next) == k ){
                     pairCounter++;
                 }
             }

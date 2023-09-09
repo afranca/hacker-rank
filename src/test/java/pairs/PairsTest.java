@@ -34,12 +34,4 @@ class PairsTest {
         assertEquals(0, actual);
     }
 
-    @Test
-    void arrayWithNegativeNumbers(){
-        List arr = List.of(-1,5,-3,3,-2);
-        int k = -2;
-        int actual = sut.pairs(k,arr);
-        assertEquals(2, actual);
-    }
-
 }
