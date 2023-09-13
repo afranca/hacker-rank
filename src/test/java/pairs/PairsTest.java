@@ -12,9 +12,9 @@ class PairsTest {
 
     @Test
     void simpleCase(){
-        List arr = List.of(1,5,3,4,2);
         int k = 2;
-        int actual = sut.pairsThread(k,arr);
+        List arr = List.of(1,5,3,4,2);
+        int actual = sut.pairsEnhanced(k,arr);
         assertEquals(3, actual);
     }
 
@@ -22,7 +22,7 @@ class PairsTest {
     void minArray_with1Match(){
         List arr = List.of(3,5);
         int k = 2;
-        int actual = sut.pairsThread(k,arr);
+        int actual = sut.pairsEnhanced(k,arr);
         assertEquals(1, actual);
     }
 
@@ -30,7 +30,7 @@ class PairsTest {
     void minArray_withNoMatch(){
         List arr = List.of(1,5);
         int k = 2;
-        int actual = sut.pairsThread(k,arr);
+        int actual = sut.pairsEnhanced(k,arr);
         assertEquals(0, actual);
     }
 

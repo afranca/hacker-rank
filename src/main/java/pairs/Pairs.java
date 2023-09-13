@@ -1,7 +1,9 @@
 package pairs;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Pairs {
 
@@ -63,5 +65,24 @@ public class Pairs {
             }
         }
         return counter;
+    }
+
+    public int pairsEnhanced(int k, List<Integer> arr) {
+        int pairCounter = 0;
+        Set<Integer> numbersSet = new HashSet<>();
+
+        // HashSet for quick lookup
+        for (int num : arr) {
+            numbersSet.add(num);
+        }
+
+        for (int num : arr) {
+            // Inverse operation, look up num + k in the HashSet
+            if (numbersSet.contains(num + k) ) {
+                pairCounter++;
+            }
+        }
+
+        return pairCounter;
     }
 }
